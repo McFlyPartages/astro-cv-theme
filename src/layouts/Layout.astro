@@ -5,6 +5,8 @@ import Title from '../components/Title.astro';
 import Subtitle from '../components/Subtitle.astro';
 import Skills from '../components/Skills.astro';
 import Languages from '../components/Languages.astro';
+import Loisirs from '../components/Loisirs.astro';
+import Atouts from '../components/Atouts.astro';
 import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
 import Social from '../components/Social.astro';
@@ -47,13 +49,22 @@ const { frontmatter } = Astro.props;
           <Text text={frontmatter.telephone} icon="fa-phone" />
           <hr>
 
-          <Subtitle text="Skills" icon="fa-asterisk" />
+          <Subtitle text="Skills" icon="fa-puzzle-piece" />
           <Skills lists={frontmatter.skills}/>
           <br>
 
           <Subtitle text="Languages" icon="fa-globe" />
           <Languages lists={frontmatter.languages}/>
           <br>
+
+          <Subtitle text="Atouts" icon="fa-user-plus" />
+          <Atouts lists={frontmatter.atouts}/>
+          <br>
+
+          <Subtitle text="Loisirs" icon="fa-heart" />
+          <Loisirs lists={frontmatter.loisirs}/>
+          <br>
+
         </div>
       </div><br>
 
@@ -62,14 +73,18 @@ const { frontmatter } = Astro.props;
 
     <!-- Right Column -->
     <div class="w3-twothird">
-    
+
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <Title text="Work Experience" icon="fa-suitcase" />
+        <Title text="Profil" icon="fa-user" />
+        <slot />
+      </div>
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <Title text="Expérience" icon="fa-suitcase" />
         <Experience lists={frontmatter.experiences}/>
       </div>
 
       <div class="w3-container w3-card w3-white">
-        <Title text="Education" icon="fa-certificate" />
+        <Title text="Education" icon="fa-graduation-cap" />
         <Education lists={frontmatter.educations}/>
       </div>
 
@@ -84,7 +99,7 @@ const { frontmatter } = Astro.props;
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <Social lists={frontmatter.social}/>
-  <p>Powered by <a href="https://github.com/dofbi/astro-cv-theme" target="_blank">dofbi</a></p>
+  <p>Propulsé par <a href="https://astro.build/" target="_blank">AstroJS</a> sur la base du théme de <a href="https://github.com/dofbi/astro-cv-theme" target="_blank">dofbi</a> modifié par moi</p>
 </footer>
 
 </body>

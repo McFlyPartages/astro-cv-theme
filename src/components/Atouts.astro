@@ -1,0 +1,8 @@
+---
+const { lists } = Astro.props;
+---
+{lists.map((item) => (
+  <ul>
+    <li style="none">{item.atout}</li>
+  </ul>
+))}
