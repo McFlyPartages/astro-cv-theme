@@ -38,6 +38,26 @@ const { frontmatter } = Astro.props;
   <div class="w3-row-padding">
   
     <!-- Left Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <Title text="Profil" icon="fa-user" />
+        <slot />
+      </div>
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <Title text="Expérience" icon="fa-suitcase" />
+        <Experience lists={frontmatter.experiences}/>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <Title text="Education" icon="fa-graduation-cap" />
+        <Education lists={frontmatter.educations}/>
+      </div>
+
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Right Column -->
     <div class="w3-third">
     
       <div class="w3-white w3-text-grey w3-card-4">
@@ -68,29 +88,8 @@ const { frontmatter } = Astro.props;
         </div>
       </div><br>
 
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <Title text="Profil" icon="fa-user" />
-        <slot />
-      </div>
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <Title text="Expérience" icon="fa-suitcase" />
-        <Experience lists={frontmatter.experiences}/>
-      </div>
-
-      <div class="w3-container w3-card w3-white">
-        <Title text="Education" icon="fa-graduation-cap" />
-        <Education lists={frontmatter.educations}/>
-      </div>
-
     <!-- End Right Column -->
     </div>
-    
   <!-- End Grid -->
   </div>
   
